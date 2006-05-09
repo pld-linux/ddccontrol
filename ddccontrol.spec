@@ -1,10 +1,9 @@
-%define name ddccontrol
 %define dbversion 20060308
 %define ddcdb	%{name}-db-%{dbversion}
 
 Summary:	DDCcontrol control the monitor parameters
 Summary(pl):	DDCcontrol s³u¿y do kontroli parametrów monitora
-Name:		%{name}
+Name:		ddccontrol
 Version:	0.4.1
 Release:	1
 License:	GPL
@@ -40,7 +39,7 @@ obudowie monitora.
 Summary:	ddccontrol libraries
 Summary(pl):	Pliki niezbêdne programistom dla ddccontrol
 Group:		Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description libs
 DDCcontrol libraries.
@@ -52,7 +51,7 @@ Biblioteki do DDCcontrol.
 Summary:	Development files for ddccontrol
 Summary(pl):	Pliki niezbêdne programistom dla ddccontrol
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 DDCcontrol is a program used to control monitor parameters, like
@@ -69,7 +68,7 @@ obudowie monitora. Ten pakiet zawiera pliki niezbêdne programistom.
 Summary:	Static libraries for ddccontrol
 Summary(pl):	Biblioteki statyczne dla ddccontrol
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 DDCcontrol is a program used to control monitor parameters, like
@@ -111,20 +110,20 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ddccontrol
 %attr(755,root,root) %{_bindir}/ddcpci
 %attr(755,root,root) %{_bindir}/gddccontrol
-%attr(644,root,root) %{_desktopdir}/*
-%attr(644,root,root) %{_pixmapsdir}/*
+%{_desktopdir}/*
+%{_pixmapsdir}/*
 %{_datadir}/locale/*/*/*
 %{_datadir}/ddccontrol-db/*
 
 %files libs
 %defattr(644,root,root,755)
-%{_libdir}/lib*.so.*
+%attr(755,root,root) %{_libdir}/lib*.so.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/*
-%{_libdir}/*.so
+%attr(755,root,root) %{_libdir}/*.so
 %{_libdir}/*.la
+%{_includedir}/*
 
 %files static
 %defattr(644,root,root,755)
