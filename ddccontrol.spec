@@ -15,12 +15,11 @@ Source1:	http://dl.sourceforge.net/ddccontrol/%{ddcdb}.tar.bz2
 Patch0:		%{name}-SAM0197.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://ddccontrol.sourceforge.net/
-BuildRequires:	gtk+2-devel >= 2.4
+BuildRequires:	gtk+2-devel >= 2:2.4
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pciutils-devel
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	gtk+2 >= 2.4
 Requires:	libxml2
 Requires:	pciutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
