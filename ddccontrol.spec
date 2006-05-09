@@ -6,7 +6,7 @@ Summary(pl):	DDCcontrol s³u¿y do kontroli parametrów monitora
 Name:		ddccontrol
 Version:	0.4.1
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		Applications
 Source0:	http://dl.sourceforge.net/ddccontrol/%{name}-%{version}.tar.bz2
 # Source0-md5:	bef6825f7dfffbb4fd40eb4a848cd438
@@ -107,6 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/ddccontrol
 %attr(755,root,root) %{_bindir}/ddcpci
 %attr(755,root,root) %{_bindir}/gddccontrol
