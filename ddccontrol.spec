@@ -15,14 +15,14 @@ Source1:	http://dl.sourceforge.net/ddccontrol/%{ddcdb}.tar.bz2
 Patch0:		%{name}-SAM0197.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://ddccontrol.sourceforge.net/
-BuildRequires:	pciutils-devel
-BuildRequires:	libxml2-devel
 BuildRequires:	gtk+2-devel >= 2.4
 BuildRequires:	libtool
-Requires:	pciutils
-Requires:	libxml2
+BuildRequires:	libxml2-devel
+BuildRequires:	pciutils-devel
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	gtk+2 >= 2.4
+Requires:	libxml2
+Requires:	pciutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,6 +46,18 @@ DDCcontrol libraries.
 
 %description libs -l pl
 Biblioteki do DDCcontrol.
+
+%package applet
+Summary:	GNOME applet for ddccontrol
+Summary(pl):	Aplet GNOME dla ddccontrol
+Group:		Applications
+Requires:	%{name} = %{version}-%{release}
+
+%description applet
+GNOME applet for ddccontrol.
+
+%description applet -l pl
+Aplet GNOME dla ddccontrol.
 
 %package devel
 Summary:	Development files for ddccontrol
@@ -87,8 +99,7 @@ obudowie monitora. Ten pakiet zawiera biblioteki statyczne.
 %patch1 -p1
 
 %build
-%configure \
-	--disable-gnome-applet
+%configure
 %{__make}
 cd %{ddcdb}
 %configure
@@ -101,11 +112,14 @@ rm -rf $RPM_BUILD_ROOT
 cd %{ddcdb}
 %{__make} install \
         DESTDIR=$RPM_BUILD_ROOT
+cd ..
+
+%find_lang %{name} --with-gnome --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/ddccontrol
@@ -113,12 +127,19 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gddccontrol
 %{_desktopdir}/*
 %{_pixmapsdir}/*
-%{_datadir}/locale/*/*/*
 %{_datadir}/ddccontrol-db/*
 
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*
+
+%files applet
+%defattr(644,root,root,755)
+%dir %{_libdir}/ddccontrol
+%dir %{_datadir}/ddccontrol
+%attr(755,root,root) %{_libdir}/ddccontrol/ddcc-applet
+%{_datadir}/ddccontrol/*
+%{_libdir}/bonobo/servers/*
 
 %files devel
 %defattr(644,root,root,755)
