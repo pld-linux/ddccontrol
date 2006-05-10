@@ -126,7 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gddccontrol
 %{_desktopdir}/*
 %{_pixmapsdir}/*
-%{_datadir}/ddccontrol-db/*
+%{_datadir}/ddccontrol-db
 
 %files libs
 %defattr(644,root,root,755)
