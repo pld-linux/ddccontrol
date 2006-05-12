@@ -16,6 +16,7 @@ Patch0:		%{name}-SAM0197.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://ddccontrol.sourceforge.net/
 BuildRequires:	gtk+2-devel >= 2:2.4
+BuildRequires:	gnome-panel-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pciutils-devel
