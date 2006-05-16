@@ -1,7 +1,8 @@
 #
 # Conditional build:
-%bcond_without	gnome	# don't build gnome applet
-%bcond_without	gtk	# don't build GTK+ GUI
+%bcond_without	gnome		# don't build gnome applet
+%bcond_without	gtk		# don't build GTK+ GUI
+%bcond_without	static_libs	# don't build static library
 #
 %define dbversion 20060308
 %define ddcdb	%{name}-db-%{dbversion}
@@ -24,8 +25,10 @@ Patch3:		%{name}-pl.patch
 URL:		http://ddccontrol.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 %{?with_gnome:BuildRequires:	gnome-panel-devel >= 2.10}
 %{?with_gtk:BuildRequires:	gtk+2-devel >= 2:2.4}
+BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pciutils-devel
@@ -119,7 +122,8 @@ Biblioteka statyczna ddccontrol.
 %{__automake}
 %configure \
 	%{!?with_gtk:--disable-gnome} \
-	%{!?with_gnome:--disable-gnome-applet}
+	%{!?with_gnome:--disable-gnome-applet} \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 cd %{ddcdb}
 %configure
@@ -175,6 +179,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libddccontrol.la
 %{_includedir}/ddccontrol
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libddccontrol.a
+%endif
