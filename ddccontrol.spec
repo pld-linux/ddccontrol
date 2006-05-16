@@ -20,6 +20,7 @@ Source1:	http://dl.sourceforge.net/ddccontrol/%{ddcdb}.tar.bz2
 Patch0:		%{name}-SAM0197.patch
 Patch1:		%{name}-desktop.patch
 Patch2:		%{name}-gnome.patch
+Patch3:		%{name}-pl.patch
 URL:		http://ddccontrol.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -108,6 +109,7 @@ Biblioteka statyczna ddccontrol.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
