@@ -1,8 +1,8 @@
 %define dbversion 20060308
 %define ddcdb	%{name}-db-%{dbversion}
 
-Summary:	DDCcontrol control the monitor parameters
-Summary(pl):	DDCcontrol s³u¿y do kontroli parametrów monitora
+Summary:	DDCcontrol - control the monitor parameters
+Summary(pl):	DDCcontrol - narzêdzie do regulacji parametrów monitora
 Name:		ddccontrol
 Version:	0.4.1
 Release:	1
@@ -31,21 +31,9 @@ brightness and contrast, by software, i.e. without using the OSD and
 the buttons in front of the monitor.
 
 %description -l pl
-DDCcontrol jest programem s³u¿±cym do kontroli parametrów monitora
+DDCcontrol jest programem s³u¿±cym do regulacji parametrów monitora
 takich jak jaskrawo¶æ i kontrast, bez u¿ywania OSD i przycisków na
 obudowie monitora.
-
-%package libs
-Summary:	ddccontrol libraries
-Summary(pl):	Pliki niezbêdne programistom dla ddccontrol
-Group:		Libraries
-Requires:	%{name} = %{version}-%{release}
-
-%description libs
-DDCcontrol libraries.
-
-%description libs -l pl
-Biblioteki do DDCcontrol.
 
 %package applet
 Summary:	GNOME applet for ddccontrol
@@ -59,39 +47,41 @@ GNOME applet for ddccontrol.
 %description applet -l pl
 Aplet GNOME dla ddccontrol.
 
+%package libs
+Summary:	ddccontrol libraries
+Summary(pl):	Biblioteki ddccontrol
+Group:		Libraries
+Requires:	%{name} = %{version}-%{release}
+
+%description libs
+DDCcontrol libraries.
+
+%description libs -l pl
+Biblioteki DDCcontrol.
+
 %package devel
 Summary:	Development files for ddccontrol
-Summary(pl):	Pliki niezbêdne programistom dla ddccontrol
+Summary(pl):	Pliki niezbêdne programistom u¿ywaj±cym ddccontrol
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-DDCcontrol is a program used to control monitor parameters, like
-brightness and contrast, by software, i.e. without using the OSD and
-the buttons in front of the monitor. This package contains files need
-for development.
+Development files for ddccontrol libraries.
 
 %description devel -l pl
-DDCcontrol jest programem s³u¿±cym do kontroli parametrów monitora
-takich jak jaskrawo¶æ i kontrast, bez u¿ywania OSD i przycisków na
-obudowie monitora. Ten pakiet zawiera pliki niezbêdne programistom.
+Pliki niezbêdne programistom u¿ywaj±cym bibliotek ddccontrol.
 
 %package static
-Summary:	Static libraries for ddccontrol
-Summary(pl):	Biblioteki statyczne dla ddccontrol
+Summary:	Static ddccontrol libraries
+Summary(pl):	Biblioteki statyczne ddccontrol
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-DDCcontrol is a program used to control monitor parameters, like
-brightness and contrast, by software, i.e. without using the OSD and
-the buttons in front of the monitor. This package contains static
-libraries.
+Static ddccontrol libraries.
 
 %description static -l pl
-DDCcontrol jest programem s³u¿±cym do kontroli parametrów monitora
-takich jak jaskrawo¶æ i kontrast, bez u¿ywania OSD i przycisków na
-obudowie monitora. Ten pakiet zawiera biblioteki statyczne.
+Biblioteki statyczne ddccontrol.
 
 %prep
 %setup -q -a 1
@@ -109,10 +99,9 @@ cd %{ddcdb}
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-cd %{ddcdb}
-%{__make} install \
+
+%{__make} -C %{ddcdb} install \
         DESTDIR=$RPM_BUILD_ROOT
-cd ..
 
 %find_lang %{name} --with-gnome --all-name
 
@@ -129,10 +118,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/*
 %{_datadir}/ddccontrol-db
 
-%files libs
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*
-
 %files applet
 %defattr(644,root,root,755)
 %dir %{_libdir}/ddccontrol
@@ -140,6 +125,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/ddccontrol/ddcc-applet
 %{_datadir}/ddccontrol/*
 %{_libdir}/bonobo/servers/*
+
+%files libs
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/lib*.so.*
 
 %files devel
 %defattr(644,root,root,755)
