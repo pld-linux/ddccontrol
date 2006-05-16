@@ -1,0 +1,49 @@
+--- ddccontrol-0.4.1/po/pl.po.orig	2006-03-04 15:48:09.000000000 +0100
++++ ddccontrol-0.4.1/po/pl.po	2006-05-16 20:31:36.507136500 +0200
+@@ -43,14 +43,14 @@
+ "p | dev]\n"
+ "\tdev: urz±dznie, np.: dev:/dev/i2c-0\n"
+ "\t-p : skanuje magistralê I2c w poszukiwaniu monitorów.\n"
+-"\t-c : query capability\n"
+-"\t-d : query ctrls 0 - 255\n"
+-"\t-r : usatwiany parametr\n"
++"\t-c : odczyt mo¿liwo¶ci\n"
++"\t-d : odczyt parametrów 0 - 255\n"
++"\t-r : odczyt parametru\n"
+ "\t-w : warto¶æ wielko¶ci parametru\n"
+-"\t-f : force (avoid validity checks)\n"
++"\t-f : wymuszenie (pominiêcie kontroli poprawno¶ci)\n"
+ "\t-s : zapisz ustawienia\n"
+ "\t-v : gadatliwy (wiêcj -v, bardziej gadatliwy)\n"
+-"\t-b : katalog basy monitorów ddccontrol-db (je¿eli inny ni¿ %s)\n"
++"\t-b : katalog bazy monitorów ddccontrol-db (je¿eli inny ni¿ %s)\n"
+ 
+ #: ../src/ddccontrol/main.c:150 ../src/ddccontrol/main.c:172
+ #, c-format
+@@ -119,7 +119,7 @@
+ #: ../src/ddccontrol/main.c:308
+ #, c-format
+ msgid "   DDC/CI supported: %s\n"
+-msgstr "   Obsluguj±ce DDC/CI: %s\n"
++msgstr "   Obs³uguj±ce DDC/CI: %s\n"
+ 
+ #: ../src/ddccontrol/main.c:308
+ msgid "Yes"
+@@ -160,7 +160,7 @@
+ "are loaded (i2c-dev, and your framebuffer driver).\n"
+ msgstr ""
+ "Brak monitorów obs³uguj±cych DDC/CI.\n"
+-"Karta graficzna mo¿e wymagaæ dodatkowych modu³ów kernela (i2c-dev, i "
++"Karta graficzna mo¿e wymagaæ dodatkowych modu³ów kernela (i2c-dev i "
+ "framebuffer)\n"
+ 
+ #: ../src/ddccontrol/main.c:337
+@@ -178,7 +178,7 @@
+ msgstr ""
+ "\n"
+ "DDC/CI w %s nie jest u¿yteczne (%d).\n"
+-"Karta graficzna mo¿e wymagaæ dodatkowych modu³ów kernela (i2c-dev, i "
++"Karta graficzna mo¿e wymagaæ dodatkowych modu³ów kernela (i2c-dev i "
+ "framebuffer).\n"
+ 
+ #: ../src/ddccontrol/main.c:345
