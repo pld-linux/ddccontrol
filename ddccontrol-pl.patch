@@ -1,12 +1,49 @@
---- ddccontrol-0.4.1/po/pl.po.orig	2006-03-04 15:48:09.000000000 +0100
-+++ ddccontrol-0.4.1/po/pl.po	2006-05-16 20:31:36.507136500 +0200
-@@ -43,14 +43,14 @@
- "p | dev]\n"
+--- ddccontrol-0.4.2/po/pl.po.orig	2006-07-27 23:14:33.000000000 +0200
++++ ddccontrol-0.4.2/po/pl.po	2006-08-25 01:27:13.761897750 +0200
+@@ -1,16 +1,17 @@
+ # Polish translations for DDC/CI control tool package.
+ # Copyright (C) 2005 Oleg I. Vdovikin and Nicolas Boichat
+ # This file is distributed under the same license as the DDC/CI control tool package.
+-# Radek <radek@cbk.waw.pl>, 2005.
++# Radek Marcinkowski <radek@cbk.waw.pl>, 2005.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2006.
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: DDC/CI control tool 0.3\n"
++"Project-Id-Version: ddccontrol 0.4.2\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2006-07-27 23:14+0200\n"
+-"PO-Revision-Date: 2005-11-18 21:28+0100\n"
+-"Last-Translator: Radek Marcinkowski <radek@cbk.waw.pl>\n"
+-"Language-Team: Polish\n"
++"PO-Revision-Date: 2006-08-25 00:31+0200\n"
++"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
++"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Content-Transfer-Encoding: 8bit\n"
+@@ -23,7 +24,7 @@
+ msgstr "Control"
+ 
+ #: ../src/ddccontrol/main.c:132
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "Usage:\n"
+ "%s [-b datadir] [-v] [-c] [-d] [-f] [-s] [-r ctrl [-w value]] [-p | dev]\n"
+@@ -39,18 +40,17 @@
+ "\t-b : ddccontrol-db directory (if other than %s)\n"
+ msgstr ""
+ "Opcje:\n"
+-"%s [-b katalog_danych] [-v] [-c] [-d] [-f] [-s] [-r parametr [-w warto¶æ]] [-"
+-"p | dev]\n"
++"%s [-b katalog_danych] [-v] [-c] [-d] [-f] [-s] [-r parametr [-w warto¶æ]] [-p | dev]\n"
  "\tdev: urz±dznie, np.: dev:/dev/i2c-0\n"
  "\t-p : skanuje magistralê I2c w poszukiwaniu monitorów.\n"
 -"\t-c : query capability\n"
 -"\t-d : query ctrls 0 - 255\n"
--"\t-r : usatwiany parametr\n"
+-"\t-r : ustawiany parametr\n"
 +"\t-c : odczyt mo¿liwo¶ci\n"
 +"\t-d : odczyt parametrów 0 - 255\n"
 +"\t-r : odczyt parametru\n"
@@ -20,14 +57,42 @@
  
  #: ../src/ddccontrol/main.c:150 ../src/ddccontrol/main.c:172
  #, c-format
+@@ -68,7 +68,7 @@
+ msgstr "[ OK ]\n"
+ 
+ #: ../src/ddccontrol/main.c:217
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "ddccontrol version %s\n"
+ "Copyright 2004-2005 Oleg I. Vdovikin (oleg@cs.msu.su)\n"
+@@ -78,12 +78,12 @@
+ "General Public License.\n"
+ "\n"
+ msgstr ""
+-"ddccontrol version %s\n"
+-"Copyright 2005 Oleg I. Vdovikin (oleg@cs.msu.su) and Nicolas Boichat "
+-"(nicolas@boichat.ch)\n"
+-"This program comes with ABSOLUTELY NO WARRANTY.\n"
+-"You may redistribute copies of this program under the terms of the GNU "
+-"General Public License.\n"
++"ddccontrol wersja %s\n"
++"Copyright 2004-2005 Oleg I. Vdovikin (oleg@cs.msu.su)\n"
++"Copyright 2004-2006 Nicolas Boichat (nicolas@boichat.ch)\n"
++"Ten program jest dostarczany BEZ JAKIEJKOLWIEK GWARANCJI.\n"
++"Mo¿na go rozprowadzaæ na warunkach Powszechnej Licencji Publicznej GNU\n"
++"(General Public License).\n"
+ "\n"
+ 
+ #: ../src/ddccontrol/main.c:236
 @@ -119,7 +119,7 @@
- #: ../src/ddccontrol/main.c:308
+ #: ../src/ddccontrol/main.c:310
  #, c-format
  msgid "   DDC/CI supported: %s\n"
 -msgstr "   Obsluguj±ce DDC/CI: %s\n"
 +msgstr "   Obs³uguj±ce DDC/CI: %s\n"
  
- #: ../src/ddccontrol/main.c:308
+ #: ../src/ddccontrol/main.c:310
  msgid "Yes"
 @@ -160,7 +160,7 @@
  "are loaded (i2c-dev, and your framebuffer driver).\n"
@@ -37,7 +102,7 @@
 +"Karta graficzna mo¿e wymagaæ dodatkowych modu³ów kernela (i2c-dev i "
  "framebuffer)\n"
  
- #: ../src/ddccontrol/main.c:337
+ #: ../src/ddccontrol/main.c:339
 @@ -178,7 +178,7 @@
  msgstr ""
  "\n"
@@ -46,4 +111,1346 @@
 +"Karta graficzna mo¿e wymagaæ dodatkowych modu³ów kernela (i2c-dev i "
  "framebuffer).\n"
  
- #: ../src/ddccontrol/main.c:345
+ #: ../src/ddccontrol/main.c:347
+@@ -203,7 +203,7 @@
+ #. Put a big warning (in red if we are writing to a terminal).
+ #: ../src/ddccontrol/main.c:354 ../src/ddccontrol/main.c:373
+ msgid "=============================== WARNING ==============================="
+-msgstr ""
++msgstr "================================ UWAGA ================================"
+ 
+ #: ../src/ddccontrol/main.c:357
+ #, c-format
+@@ -212,6 +212,9 @@
+ "using a generic profile for your monitor's manufacturer. Some controls\n"
+ "may not be supported, or may not work as expected.\n"
+ msgstr ""
++"W bazie danych nie ma obs³ugi tego monitora, a ddccontrol u¿ywa ogólnego\n"
++"profilu dla tego producenta monitorów. Niektóre parametry mog± nie byæ\n"
++"obs³ugiwane, lub mog± dzia³aæ inaczej ni¿ powinny.\n"
+ 
+ #: ../src/ddccontrol/main.c:363
+ #, c-format
+@@ -220,6 +223,9 @@
+ "using a basic generic profile. Many controls will not be supported, and\n"
+ "some controls may not work as expected.\n"
+ msgstr ""
++"W bazie danych nie ma obs³ugi tego monitora, a ddccontrol u¿ywa ogólnego\n"
++"profilu. Wiele parametrów mo¿e nie byæ obs³ugiwanych, a niektóre mog±\n"
++"dzia³aæ inaczej ni¿ powinny.\n"
+ 
+ #: ../src/ddccontrol/main.c:368
+ #, c-format
+@@ -228,11 +234,14 @@
+ "version, please send the output of the following command to\n"
+ "ddccontrol-users@lists.sourceforge.net:\n"
+ msgstr ""
++"Proszê uaktualniæ ddccontrol-db lub, je¶li to ju¿ jest najnowsza wersja,\n"
++"proszê wys³aæ wyj¶cie nastêpuj±cego polecenia na adres\n"
++"ddccontrol-users@lists.sourceforge.net:\n"
+ 
+ #: ../src/ddccontrol/main.c:372 ../src/gddccontrol/notebook.c:695
+ #, c-format
+ msgid "Thank you.\n"
+-msgstr ""
++msgstr "Dziêkujê.\n"
+ 
+ #: ../src/ddccontrol/main.c:377
+ #, c-format
+@@ -240,50 +249,52 @@
+ "\n"
+ "Capabilities:\n"
+ msgstr ""
++"\n"
++"Mo¿liwo¶ci:\n"
+ 
+ #: ../src/ddccontrol/main.c:381
+ #, c-format
+ msgid "Raw output: %s\n"
+-msgstr ""
++msgstr "Wyj¶cie czyste: %s\n"
+ 
+ #: ../src/ddccontrol/main.c:383
+ #, c-format
+ msgid "Parsed output: \n"
+-msgstr ""
++msgstr "Wyj¶cie przetworzone: \n"
+ 
+ #: ../src/ddccontrol/main.c:392
+ #, c-format
+ msgid "\tType: "
+-msgstr ""
++msgstr "\tRodzaj: "
+ 
+ #: ../src/ddccontrol/main.c:395
+ #, c-format
+ msgid "LCD"
+-msgstr ""
++msgstr "LCD"
+ 
+ #: ../src/ddccontrol/main.c:398
+ #, c-format
+ msgid "CRT"
+-msgstr ""
++msgstr "CRT"
+ 
+ #: ../src/ddccontrol/main.c:401
+ #, c-format
+ msgid "Unknown"
+-msgstr ""
++msgstr "Nieznany"
+ 
+ #: ../src/ddccontrol/main.c:410
+ #, c-format
+ msgid "Capabilities read fail.\n"
+-msgstr ""
++msgstr "Odczyt mo¿liwo¶ci nie powiód³ siê.\n"
+ 
+ #: ../src/ddccontrol/main.c:418
+-#, fuzzy, c-format
++#, c-format
+ msgid ""
+ "\n"
+ "Writing 0x%02x, 0x%02x(%d) (%dms delay)...\n"
+ msgstr ""
+ "\n"
+-"Zapis: 0x%02x, 0x%02x(%d)...\n"
++"Zapis: 0x%02x, 0x%02x(%d) (opó¼nienie %dms)...\n"
+ 
+ #: ../src/ddccontrol/main.c:422
+ #, c-format
+@@ -309,6 +320,8 @@
+ "\n"
+ "Controls (valid/current/max) [Description - Value name]:\n"
+ msgstr ""
++"\n"
++"Parametry (poprawny/aktualny/maksymalny) [Opis - nazwa warto¶ci]:\n"
+ 
+ #: ../src/ddccontrol/main.c:458
+ #, c-format
+@@ -348,29 +361,29 @@
+ #: ../src/ddcpci/i2c-algo-bit.c:368
+ #, c-format
+ msgid "sendbytes: error - bailout.\n"
+-msgstr ""
++msgstr "sendbytes: b³±d - przerwano.\n"
+ 
+ #. read timed out
+ #: ../src/ddcpci/i2c-algo-bit.c:395
+ #, c-format
+ msgid "i2c-algo-bit.o: readbytes: i2c_inb timed out.\n"
+-msgstr ""
++msgstr "i2c-algo-bit.o: readbytes: i2c_inb przekroczy³o limit czasu.\n"
+ 
+ #: ../src/ddcpci/i2c-algo-bit.c:414
+ #, c-format
+ msgid "i2c-algo-bit.o: readbytes: Timeout at ack\n"
+-msgstr ""
++msgstr "i2c-algo-bit.o: readbytes: Przekroczony limit czasu przy ack\n"
+ 
+ #: ../src/ddcpci/intel740.c:103 ../src/ddcpci/intel810.c:161
+ #: ../src/ddcpci/nvidia.c:155 ../src/ddcpci/radeon.c:209
+ #, c-format
+ msgid "%s: Malloc error.\n"
+-msgstr ""
++msgstr "%s: B³±d malloca.\n"
+ 
+ #: ../src/ddcpci/intel740.c:109
+ #, c-format
+ msgid "%s: ioperm failed"
+-msgstr ""
++msgstr "%s: ioperm nie powiod³o siê"
+ 
+ #: ../src/ddcpci/intel740.c:121
+ #, c-format
+@@ -380,20 +393,20 @@
+ #: ../src/ddcpci/intel810.c:105
+ #, c-format
+ msgid "%s: Malloc error."
+-msgstr ""
++msgstr "%s: B³±d malloca."
+ 
+ #: ../src/ddcpci/intel810.c:171
+ msgid "i810_open: cannot open /dev/mem"
+-msgstr ""
++msgstr "i810_open: nie mo¿na otworzyæ /dev/mem"
+ 
+ #: ../src/ddcpci/intel810.c:206
+ #, c-format
+ msgid "i810_open: Error: cannot find any valid MMIO PCI region.\n"
+-msgstr ""
++msgstr "i810_open: B³±d: nie mo¿na odnale¼æ ¿adnego poprawnego regionu PCI MMIO.\n"
+ 
+ #: ../src/ddcpci/intel810.c:213
+ msgid "i810_open: mmap failed"
+-msgstr ""
++msgstr "i810_open: mmap nie powiod³o siê"
+ 
+ #: ../src/ddcpci/main.c:154
+ msgid "==>Error while sending open message"
+@@ -415,57 +428,57 @@
+ #: ../src/ddcpci/main.c:290
+ #, c-format
+ msgid "==>Can't read verbosity.\n"
+-msgstr ""
++msgstr "==>Nie mo¿na odczytaæ gadatliwo¶ci.\n"
+ 
+ #: ../src/ddcpci/main.c:297
+ #, c-format
+ msgid "==>Can't read key.\n"
+-msgstr ""
++msgstr "==>Nie mo¿na odczytaæ klucza.\n"
+ 
+ #: ../src/ddcpci/main.c:302
+ #, c-format
+ msgid "==>Can't open key %u\n"
+-msgstr ""
++msgstr "==>Nie mo¿na otworzyæ klucza %u\n"
+ 
+ #: ../src/ddcpci/main.c:316
+ #, c-format
+ msgid "==>No command received for %ld seconds, aborting.\n"
+-msgstr ""
++msgstr "==>Nie otrzymano polecenia przez %ld sekund, przerwano.\n"
+ 
+ #: ../src/ddcpci/main.c:324
+ msgid "==>Error while receiving query\n"
+-msgstr ""
++msgstr "==>B³±d podczas odbierania zapytania\n"
+ 
+ #: ../src/ddcpci/main.c:359
+ #, c-format
+ msgid "==>Invalid query...\n"
+-msgstr ""
++msgstr "==>B³êdne zapytanie...\n"
+ 
+ #: ../src/ddcpci/nvidia.c:122
+ #, c-format
+ msgid "nvidia.c:init_i2c_bus: Malloc error."
+-msgstr ""
++msgstr "nvidia.c:init_i2c_bus: B³±d malloca."
+ 
+ #: ../src/ddcpci/nvidia.c:165
+ msgid "nvidia_open: cannot open /dev/mem"
+-msgstr ""
++msgstr "nvidia_open: nie mo¿na otworzyæ /dev/mem"
+ 
+ #: ../src/ddcpci/nvidia.c:175
+ msgid "nvidia_open: mmap failed"
+-msgstr ""
++msgstr "nvidia_open: mmap nie powiod³o siê"
+ 
+ #: ../src/ddcpci/radeon.c:173
+ #, c-format
+ msgid "radeon.c:init_i2c_bus: Malloc error."
+-msgstr ""
++msgstr "radeon.c:init_i2c_bus: B³±d malloca."
+ 
+ #: ../src/ddcpci/radeon.c:221
+ msgid "radeon_open: cannot open /dev/mem"
+-msgstr ""
++msgstr "radeon_open: nie mo¿na otworzyæ /dev/mem"
+ 
+ #: ../src/ddcpci/radeon.c:230
+ msgid "radeon_open: mmap failed"
+-msgstr ""
++msgstr "radeon_open: mmap nie powiod³o siê"
+ 
+ #: ../src/gddccontrol/fspatterns.c:195
+ msgid ""
+@@ -474,21 +487,27 @@
+ " - White should be as bright as possible.\n"
+ " - You must be able to distinguish each gray level (particularly 0 and 12).\n"
+ msgstr ""
++"Wyreguluj jasno¶æ i kontrast zgodnie z poni¿szymi zasadami:\n"
++" - Czerñ musi byæ tak ciemna, jak to tylko mo¿liwe.\n"
++" - Biel musi byæ tak jasna, jak to tylko mo¿liwe.\n"
++" - Musisz byæ w stanie rozró¿niæ ka¿dy stopieñ szaro¶ci (szczególnie 0 i 12).\n"
+ 
+ #: ../src/gddccontrol/fspatterns.c:211
+ msgid "Try to make moire patterns disappear."
+-msgstr ""
++msgstr "Spróbuj doprowadziæ do znikniêcia wzorów mory."
+ 
+ #: ../src/gddccontrol/fspatterns.c:215
+ msgid ""
+ "Adjust Image Lock Coarse to make the vertical band disappear.\n"
+ "Adjust Image Lock Fine to minimize movement on the screen."
+ msgstr ""
++"Wyreguluj zgrubn± blokadê obrazu, aby pionowy pasek znikn±³.\n"
++"Wyreguluj dok³adn± blokadê obrazu, aby zminimalizowaæ ruch na ekranie."
+ 
+ #: ../src/gddccontrol/fspatterns.c:254
+ #, c-format
+ msgid "Unknown fullscreen pattern name: %s"
+-msgstr ""
++msgstr "Nieznana nazwa wzoru ca³oekranowego: %s"
+ 
+ #: ../src/gddccontrol/gprofile.c:53
+ msgid "You must select at least one control to be saved in the profile."
+@@ -517,6 +536,7 @@
+ "Please select the controls you want to save in the profile using the "
+ "checkboxes to the left of each control."
+ msgstr ""
++"Proszê wybraæ parametry do zapisu w profilu przy u¿yciu kontrolek z lewej strony ka¿dego parametru."
+ 
+ #: ../src/gddccontrol/gprofile.c:174
+ msgid "Profile Manager"
+@@ -633,7 +653,7 @@
+ 
+ #: ../src/gddccontrol/main.c:518
+ msgid "OK"
+-msgstr ""
++msgstr "OK"
+ 
+ #: ../src/gddccontrol/main.c:546
+ msgid "Refresh"
+@@ -671,7 +691,7 @@
+ 
+ #: ../src/gddccontrol/notebook.c:493
+ msgid "Show fullscreen patterns"
+-msgstr ""
++msgstr "Poka¿ wzory ca³oekranowe"
+ 
+ #: ../src/gddccontrol/notebook.c:525
+ msgid "Section"
+@@ -687,6 +707,11 @@
+ "If your monitor has two inputs, please try to connect the cable to the other "
+ "input, and then click on the refresh button near the monitor list."
+ msgstr ""
++"Aktualny monitor jest w bazie danych, ale nie obs³uguje DDC/CI.\n"
++"\n"
++"Zwykle zdarza siê to przy pod³±czeniu kabla VGA/DVI do z³ego wej¶cia monitora obs³uguj±cego DDC/CI tylko na jednym z dwóch wej¶æ.\n"
++"\n"
++"Je¶li monitor ma dwa wej¶cia, proszê spróbowaæ pod³±czyæ kabel do innego wej¶cia i klikn±æ na przycisku od¶wie¿enia blisko listy monitorów."
+ 
+ #: ../src/gddccontrol/notebook.c:583
+ #, c-format
+@@ -711,6 +736,10 @@
+ "and send the output to ddccontrol-users@lists.sourceforge.net.\n"
+ "Thanks."
+ msgstr ""
++"Aktualny monitor nie jest obs³ugiwany, proszê uruchomiæ\n"
++"%s\n"
++"i wys³aæ wyj¶cie na ddccontrol-users@lists.sourceforge.net.\n"
++"Dziêkujê."
+ 
+ #: ../src/gddccontrol/notebook.c:620
+ msgid "Please click on a group name."
+@@ -731,6 +760,7 @@
+ "using a generic profile for your monitor's manufacturer. Some controls may "
+ "not be supported, or may not work as expected.\n"
+ msgstr ""
++"W bazie danych nie ma obs³ugi tego monitora, a ddccontrol u¿ywa ogólnego profilu dla tego producenta monitorów. Niektóre parametry mog± nie byæ obs³ugiwane, lub mog± dzia³aæ inaczej ni¿ powinny.\n"
+ 
+ #: ../src/gddccontrol/notebook.c:683
+ msgid ""
+@@ -738,10 +768,11 @@
+ "using a basic generic profile. Many controls will not be supported, and some "
+ "controls may not work as expected.\n"
+ msgstr ""
++"W bazie danych nie ma obs³ugi tego monitora, a ddccontrol u¿ywa ogólnego profilu. Wiele parametrów mo¿e nie byæ obs³ugiwanych, a niektóre mog± dzia³aæ inaczej ni¿ powinny.\n"
+ 
+ #: ../src/gddccontrol/notebook.c:688
+ msgid "Warning!"
+-msgstr ""
++msgstr "Uwaga!"
+ 
+ #: ../src/gddccontrol/notebook.c:690
+ msgid ""
+@@ -749,27 +780,28 @@
+ "version, please send the output of the following command to ddccontrol-"
+ "users@lists.sourceforge.net:\n"
+ msgstr ""
++"Proszê uaktualniæ ddccontrol-db lub, je¶li to ju¿ jest najnowsza wersja, proszê wys³aæ wyj¶cie nastêpuj±cego polecenia na adres ddccontrol-users@lists.sourceforge.net:\n"
+ 
+ #: ../src/gnome-ddcc-applet/GNOME_ddcc-applet.server.in.in.h:1
+ #: ../src/gnome-ddcc-applet/ddcc-applet.c:184
+ msgid "Monitor Profile Switcher"
+-msgstr ""
++msgstr "Prze³±cznik profili monitora"
+ 
+ #: ../src/gnome-ddcc-applet/GNOME_ddcc-applet.server.in.in.h:2
+ msgid "Quickly switch monitor profiles created with gddccontrol"
+-msgstr ""
++msgstr "Szybkie prze³±czanie profili monitora utworzonych przy u¿yciu gddccontrol"
+ 
+ #: ../src/gnome-ddcc-applet/GNOME_ddcc-applet.xml.h:1
+ msgid "_About..."
+-msgstr ""
++msgstr "_O..."
+ 
+ #: ../src/gnome-ddcc-applet/GNOME_ddcc-applet.xml.h:2
+ msgid "_Properties..."
+-msgstr ""
++msgstr "_W³a¶ciwo¶ci..."
+ 
+ #: ../src/gnome-ddcc-applet/GNOME_ddcc-applet.xml.h:3
+ msgid "_Run gddccontrol..."
+-msgstr ""
++msgstr "_Uruchomienie gddccontrol..."
+ 
+ #: ../src/gnome-ddcc-applet/ddcc-applet.c:189
+ msgid ""
+@@ -777,6 +809,9 @@
+ "Based on libddccontrol and part of the ddccontrol project.\n"
+ "(http://ddccontrol.sourceforge.net)"
+ msgstr ""
++"Aplet do szybkiego prze³±czania profili monitora.\n"
++"Oparty na libddccontrol i bêd±cy czê¶ci± projektu ddccontrol.\n"
++"(http://ddccontrol.sourceforge.net)"
+ 
+ #: ../src/gnome-ddcc-applet/ddcc-applet.c:386
+ msgid "Unable to initialize ddcci library"
+@@ -784,15 +819,15 @@
+ 
+ #: ../src/gnome-ddcc-applet/ddcc-applet.c:390
+ msgid "No monitor configuration found. Please run gddccontrol first"
+-msgstr ""
++msgstr "Nie znaleziono konfiguracji monitora. Proszê najpierw uruchomiæ gddccontrol"
+ 
+ #: ../src/gnome-ddcc-applet/ddcc-applet.c:395
+ msgid "An error occured while opening the monitor device"
+-msgstr ""
++msgstr "Wyst±pi³ b³±d podczas otwierania urz±dzenia monitora"
+ 
+ #: ../src/gnome-ddcc-applet/ddcc-applet.c:400
+ msgid "Can't find any profiles"
+-msgstr ""
++msgstr "Nie znaleziono ¿adnego profilu"
+ 
+ #. only reached, if init was not finished
+ #: ../src/gnome-ddcc-applet/ddcc-applet.c:416
+@@ -805,12 +840,12 @@
+ 
+ #: ../src/gnome-ddcc-applet/ddcc-applet.c:443
+ msgid "Monitor Profile Switcher Properties"
+-msgstr ""
++msgstr "W³a¶ciwo¶ci prze³±czania profili monitora"
+ 
+ #: ../src/lib/conf.c:61 ../src/lib/conf.c:258 ../src/lib/conf.c:308
+ #: ../src/lib/ddcci.c:1202
+ msgid "Cannot create filename (buffer too small)\n"
+-msgstr ""
++msgstr "Nie mo¿na utworzyæ nazwy pliku (bufor zbyt ma³y)\n"
+ 
+ #: ../src/lib/conf.c:86 ../src/lib/conf.c:363 ../src/lib/monitor_db.c:350
+ #: ../src/lib/monitor_db.c:714
+@@ -826,177 +861,177 @@
+ #: ../src/lib/conf.c:99 ../src/lib/conf.c:376
+ #, c-format
+ msgid "profile of the wrong type, root node %s != profile"
+-msgstr ""
++msgstr "profil z³ego rodzaju, g³ówny wêze³ %s != profile"
+ 
+ #: ../src/lib/conf.c:105
+ msgid "Can't find ddccontrolversion property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci ddccontrolversion."
+ 
+ #: ../src/lib/conf.c:107
+ #, c-format
+ msgid "ddccontrol has been upgraded since monitorlist was saved (%s vs %s).\n"
+-msgstr ""
++msgstr "ddccontrol zosta³ uaktualniony od zapisania listy monitorów (%s vs %s).\n"
+ 
+ #: ../src/lib/conf.c:124
+ msgid "Can't find filename property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci filename."
+ 
+ #: ../src/lib/conf.c:130
+ msgid "Can't find supported property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci supported."
+ 
+ #: ../src/lib/conf.c:133
+ msgid "Can't convert supported property to int."
+-msgstr ""
++msgstr "Nie mo¿na przekonwertowaæ w³a¶ciwo¶ci supported na int."
+ 
+ #: ../src/lib/conf.c:138 ../src/lib/conf.c:385 ../src/lib/monitor_db.c:90
+ #: ../src/lib/monitor_db.c:194 ../src/lib/monitor_db.c:370
+ #: ../src/lib/monitor_db.c:426 ../src/lib/monitor_db.c:447
+ msgid "Can't find name property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci name."
+ 
+ #: ../src/lib/conf.c:144
+ msgid "Can't find digital property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci digital."
+ 
+ #: ../src/lib/conf.c:147
+ msgid "Can't convert digital property to int."
+-msgstr ""
++msgstr "Nie mo¿na przekonwertowaæ w³a¶ciwo¶ci digital na int."
+ 
+ #: ../src/lib/conf.c:175 ../src/lib/conf.c:439
+ msgid "Cannot create the xml writer\n"
+-msgstr ""
++msgstr "Nie mo¿na utworzyæ pisarza xml\n"
+ 
+ #: ../src/lib/conf.c:239
+ msgid "Cannot read control value\n"
+-msgstr ""
++msgstr "Nie mo¿na odczytaæ warto¶ci parametru\n"
+ 
+ #: ../src/lib/conf.c:276
+ msgid "Cannot write control value\n"
+-msgstr ""
++msgstr "Nie mo¿na zapisaæ warto¶ci parametru\n"
+ 
+ #: ../src/lib/conf.c:313
+ msgid "Error while opening ddccontrol home directory."
+-msgstr ""
++msgstr "B³±d podczas otwierania katalogu domowego ddccontrol."
+ 
+ #: ../src/lib/conf.c:337
+ msgid "Error while reading ddccontrol home directory."
+-msgstr ""
++msgstr "B³±d podczas odczytu katalogu domowego ddccontrol."
+ 
+ #: ../src/lib/conf.c:382
+ msgid "Can't find pnpid property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci pnpid."
+ 
+ #: ../src/lib/conf.c:388 ../src/lib/conf.c:391
+ msgid "Can't find version property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci version."
+ 
+ #: ../src/lib/conf.c:390 ../src/lib/monitor_db.c:752
+ msgid "Can't convert version to int."
+-msgstr ""
++msgstr "Nie mo¿na przekonwertowaæ wersji na int."
+ 
+ #: ../src/lib/conf.c:393
+ #, c-format
+ msgid "profile version (%d) is not supported (should be %d).\n"
+-msgstr ""
++msgstr "wersja profilu (%d) nie jest obs³ugiwana (powinna byæ %d).\n"
+ 
+ #: ../src/lib/conf.c:407 ../src/lib/monitor_db.c:229
+ msgid "Can't find address property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci address."
+ 
+ #: ../src/lib/conf.c:409 ../src/lib/monitor_db.c:231
+ msgid "Can't convert address to int."
+-msgstr ""
++msgstr "Nie mo¿na przekonwertowaæ adresu na int."
+ 
+ #: ../src/lib/conf.c:413 ../src/lib/monitor_db.c:112
+ msgid "Can't find value property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci value."
+ 
+ #: ../src/lib/conf.c:415 ../src/lib/monitor_db.c:114
+ msgid "Can't convert value to int."
+-msgstr ""
++msgstr "Nie mo¿na przekonwertowaæ warto¶ci na int."
+ 
+ #: ../src/lib/conf.c:499
+ msgid "ddcci_delete_profile: Error, cannot delete profile.\n"
+-msgstr ""
++msgstr "ddcci_delete_profile: B³±d, nie mo¿na usun±æ profilu.\n"
+ 
+ #: ../src/lib/conf.c:519
+ #, c-format
+ msgid "ddcci_delete_profile: Error, could not find the profile to delete.\n"
+-msgstr ""
++msgstr "ddcci_delete_profile: B³±d, nie znaleziono profilu do usuniêcia.\n"
+ 
+ #: ../src/lib/ddcci.c:146
+ msgid "Error while initialisating the message queue"
+-msgstr ""
++msgstr "B³±d podczas inicjalizacji kolejki komunikatów"
+ 
+ #: ../src/lib/ddcci.c:175
+ msgid "Error while sending quit message"
+-msgstr ""
++msgstr "B³±d podczas wysy³ania komunikatu koñcz±cego"
+ 
+ #: ../src/lib/ddcci.c:221
+ msgid "Error while sending heartbeat message"
+-msgstr ""
++msgstr "B³±d podczas wysy³ania komunikatu znaku ¿ycia"
+ 
+ #: ../src/lib/ddcci.c:239
+ #, c-format
+ msgid "Failed to initialize ddccontrol database...\n"
+-msgstr ""
++msgstr "Nie uda³o siê zainicjowaæ bazy danych ddccontrol...\n"
+ 
+ #: ../src/lib/ddcci.c:275 ../src/lib/ddcci.c:350
+ #, c-format
+ msgid "ioctl returned %d\n"
+-msgstr ""
++msgstr "ioctl zwróci³o %d\n"
+ 
+ #: ../src/lib/ddcci.c:300
+ msgid "Error while sending write message"
+-msgstr ""
++msgstr "B³±d podczas wysy³ania komunikatu zapisu"
+ 
+ #: ../src/lib/ddcci.c:309
+ msgid "Error while reading write message answer"
+-msgstr ""
++msgstr "B³±d podczas odczytu odpowiedzi na komunikat zapisu"
+ 
+ #: ../src/lib/ddcci.c:376
+ msgid "Error while sending read message"
+-msgstr ""
++msgstr "B³±d podczas wysy³ania komunikatu odczytu"
+ 
+ #: ../src/lib/ddcci.c:385
+ msgid "Error while reading read message answer"
+-msgstr ""
++msgstr "B³±d podczas odczytu odpowiedzi na komunikat odczytu"
+ 
+ #: ../src/lib/ddcci.c:475
+ #, c-format
+ msgid "Invalid response, first byte is 0x%02x, should be 0x%02x\n"
+-msgstr ""
++msgstr "B³êdna odpowied¼, pierwszy bajt to 0x%02x, powinien byæ 0x%02x\n"
+ 
+ #: ../src/lib/ddcci.c:485
+ #, c-format
+ msgid "Non-fatal error: Invalid response, magic is 0x%02x\n"
+-msgstr ""
++msgstr "B³±d niekrytyczny: B³êdna odpowied¼, liczba magiczna wynosi 0x%02x\n"
+ 
+ #: ../src/lib/ddcci.c:492
+ #, c-format
+ msgid "Invalid response, length is %d, should be %d at most\n"
+-msgstr ""
++msgstr "B³êdna odpowied¼, d³ugo¶æ wynosi %d, powinna byæ najwy¿ej %d\n"
+ 
+ #: ../src/lib/ddcci.c:505
+ #, c-format
+ msgid "Invalid response, corrupted data - xor is 0x%02x, length 0x%02x\n"
+-msgstr ""
++msgstr "B³êdna odpowied¼, uszkodzone dane - xor wynosi 0x%02x, d³ugo¶æ 0x%02x\n"
+ 
+ #: ../src/lib/ddcci.c:658 ../src/lib/ddcci.c:680
+ #, c-format
+ msgid "Can't convert value to int, invalid CAPS (buf=%s, pos=%d).\n"
+-msgstr ""
++msgstr "Nie mo¿na przekonwertowaæ warto¶ci na int, b³êdne CAPS (buf=%s, pos=%d).\n"
+ 
+ #: ../src/lib/ddcci.c:763
+ #, c-format
+ msgid "Invalid sequence in caps.\n"
+-msgstr ""
++msgstr "B³êdna sekwencja w mo¿liwo¶ciach.\n"
+ 
+ #: ../src/lib/ddcci.c:841
+ #, c-format
+ msgid "Corrupted EDID at 0x%02x.\n"
+-msgstr ""
++msgstr "Uszkodzony EDID pod 0x%02x.\n"
+ 
+ #: ../src/lib/ddcci.c:853
+ #, c-format
+@@ -1011,7 +1046,7 @@
+ #: ../src/lib/ddcci.c:859
+ #, c-format
+ msgid "EDID version: %d.%d\n"
+-msgstr ""
++msgstr "Wersja EDID: %d.%d\n"
+ 
+ #: ../src/lib/ddcci.c:862
+ #, c-format
+@@ -1021,7 +1056,7 @@
+ #: ../src/lib/ddcci.c:873
+ #, c-format
+ msgid "Reading EDID 0x%02x failed.\n"
+-msgstr ""
++msgstr "Odczyt EDID 0x%02x nie powiód³ siê.\n"
+ 
+ #: ../src/lib/ddcci.c:903
+ #, c-format
+@@ -1062,7 +1097,7 @@
+ 
+ #: ../src/lib/ddcci.c:1106
+ msgid "Error while reading list entry"
+-msgstr ""
++msgstr "B³±d podczas odczytu wpisu listy"
+ 
+ #: ../src/lib/ddcci.c:1123
+ #, c-format
+@@ -1076,44 +1111,46 @@
+ 
+ #: ../src/lib/ddcci.c:1206
+ msgid "Error while getting informations about ddccontrol home directory."
+-msgstr ""
++msgstr "B³±d podczas pobierania informacji o katalogu domowym ddccontrol."
+ 
+ #: ../src/lib/ddcci.c:1211
+ msgid "Error while creating ddccontrol home directory."
+-msgstr ""
++msgstr "B³±d podczas tworzenia katalogu domowego ddccontrol."
+ 
+ #: ../src/lib/ddcci.c:1216
+ msgid ""
+ "Error while getting informations about ddccontrol home directory after "
+ "creating it."
+ msgstr ""
++"B³±d podczas pobierania informacji o katalogu domowym ddccontrol po utworzeniu go."
+ 
+ #: ../src/lib/ddcci.c:1223
+ msgid "Error: '.ddccontrol' in your home directory is not a directory."
+-msgstr ""
++msgstr "B³±d: '.ddccontrol' w katalogu domowym u¿ytkownika nie jest katalogiem."
+ 
+ #: ../src/lib/ddcci.c:1231
+ msgid "Error while getting informations about ddccontrol profile directory."
+-msgstr ""
++msgstr "B³±d podczas pobierania informacji o katalogu profili ddccontrol."
+ 
+ #: ../src/lib/ddcci.c:1236
+ msgid "Error while creating ddccontrol profile directory."
+-msgstr ""
++msgstr "B³±d podczas tworzenia katalogu profili ddccontrol."
+ 
+ #: ../src/lib/ddcci.c:1241
+ msgid ""
+ "Error while getting informations about ddccontrol profile directory after "
+ "creating it."
+ msgstr ""
++"B³±d podczas pobierania informacji o katalogu profili ddccontrol po utworzeniu go."
+ 
+ #: ../src/lib/ddcci.c:1248
+ msgid ""
+ "Error: '.ddccontrol/profiles' in your home directory is not a directory."
+-msgstr ""
++msgstr "B³±d: '.ddccontrol/profiles' w katalogu domowym u¿ytkownika nie jest katalogiem."
+ 
+ #: ../src/lib/monitor_db.c:82 ../src/lib/monitor_db.c:192
+ msgid "Can't find id property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci id."
+ 
+ #: ../src/lib/monitor_db.c:151 ../src/lib/monitor_db.c:546
+ #, c-format
+@@ -1122,25 +1159,25 @@
+ 
+ #: ../src/lib/monitor_db.c:205
+ msgid "Invalid refresh type (!= none, != all)."
+-msgstr ""
++msgstr "B³êdny rodzaj od¶wie¿ania (!= none, != all)."
+ 
+ #: ../src/lib/monitor_db.c:238
+ #, c-format
+ msgid "Control %s has been discarded by the caps string.\n"
+-msgstr ""
++msgstr "Parametr %s zosta³ usuniêty przez ³añcuch mo¿liwo¶ci.\n"
+ 
+ #: ../src/lib/monitor_db.c:246
+ #, c-format
+ msgid "Control %s (0x%02x) has already been defined.\n"
+-msgstr ""
++msgstr "Parametr %s (0x%02x) ju¿ zosta³ zdefiniowany.\n"
+ 
+ #: ../src/lib/monitor_db.c:259
+ msgid "Can't convert delay to int."
+-msgstr ""
++msgstr "Nie mo¿na przekonwertowaæ opó¼nienia na int."
+ 
+ #: ../src/lib/monitor_db.c:267
+ msgid "Can't find type property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci type."
+ 
+ #: ../src/lib/monitor_db.c:292 ../src/lib/monitor_db.c:381
+ msgid "Invalid type."
+@@ -1149,7 +1186,7 @@
+ #: ../src/lib/monitor_db.c:343
+ #, c-format
+ msgid "Database must be inited before reading a monitor file.\n"
+-msgstr ""
++msgstr "Baza danych musi byæ zainicjowana przed odczytem pliku monitora.\n"
+ 
+ #: ../src/lib/monitor_db.c:357
+ #, c-format
+@@ -1159,43 +1196,41 @@
+ #: ../src/lib/monitor_db.c:363
+ #, c-format
+ msgid "monitor/%s.xml of the wrong type, root node %s != monitor"
+-msgstr ""
++msgstr "monitor/%s.xml jest z³ego typu, g³ówny wêze³ %s != monitor"
+ 
+ #: ../src/lib/monitor_db.c:464
+ msgid "Can't find add or remove property in caps."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci add ani remove w caps."
+ 
+ #: ../src/lib/monitor_db.c:466
+-#, fuzzy
+ msgid "Invalid remove caps."
+-msgstr "B³êdne argumenty.\n"
++msgstr "B³êdne w³asno¶ci do usuniêcia."
+ 
+ #: ../src/lib/monitor_db.c:468
+-#, fuzzy
+ msgid "Invalid add caps."
+-msgstr "Niepoprawny typ."
++msgstr "B³êdne w³asno¶ci do dodania."
+ 
+ #: ../src/lib/monitor_db.c:473
+ #, c-format
+ msgid "Error, include recursion level > 15 (file: %s).\n"
+-msgstr ""
++msgstr "B³±d, poziom zag³êbienia do³±czania > 15 (plik: %s).\n"
+ 
+ #: ../src/lib/monitor_db.c:479
+ msgid "Can't find file property."
+-msgstr ""
++msgstr "Nie znaleziono w³a¶ciwo¶ci plik."
+ 
+ #: ../src/lib/monitor_db.c:487
+ msgid "Two controls part in XML file."
+-msgstr ""
++msgstr "Dwie czê¶ci controls w pliku XML."
+ 
+ #: ../src/lib/monitor_db.c:534
+ msgid "Error enumerating controls in subgroup."
+-msgstr ""
++msgstr "B³±d podczas zliczania parametrów w podgrupie."
+ 
+ #: ../src/lib/monitor_db.c:589
+-#, fuzzy, c-format
++#, c-format
+ msgid "document of the wrong type, can't find controls or include.\n"
+-msgstr "niepoprawny typ documentu, nie znaleziono parametru.\n"
++msgstr "niepoprawny typ documentu, nie znaleziono parametru lub do³±czenia.\n"
+ 
+ #: ../src/lib/monitor_db.c:721
+ #, c-format
+@@ -1205,7 +1240,7 @@
+ #: ../src/lib/monitor_db.c:728
+ #, c-format
+ msgid "options.xml of the wrong type, root node %s != options"
+-msgstr ""
++msgstr "options.xml z³ego typu, g³ówny wêze³ %s != options"
+ 
+ #: ../src/lib/monitor_db.c:738
+ #, c-format
+@@ -1226,14 +1261,14 @@
+ #: ../src/lib/monitor_db.c:756
+ #, c-format
+ msgid "Please update ddccontrol program.\n"
+-msgstr ""
++msgstr "Proszê uaktualniæ program ddccontrol.\n"
+ 
+ #: ../src/lib/monitor_db.c:763
+ #, c-format
+ msgid "options.xml dbversion (%d) is less than the supported version (%d).\n"
+-msgstr ""
++msgstr "dbversion options.xml (%d) jest mniejsza od obs³ugiwanej (%d).\n"
+ 
+ #: ../src/lib/monitor_db.c:764
+ #, c-format
+ msgid "Please update ddccontrol database.\n"
+-msgstr ""
++msgstr "Proszê uaktualniæ bazê danych ddccontrol.\n"
+--- ddccontrol-0.4.2/ddccontrol-db-20060730/po/pl.po.orig	2006-07-30 19:15:22.000000000 +0200
++++ ddccontrol-0.4.2/ddccontrol-db-20060730/po/pl.po	2006-08-25 01:26:32.475317500 +0200
+@@ -1,16 +1,17 @@
+ # Polish translations for DDC/CI control tool database package.
+ # Copyright (C) 2005 Oleg I. Vdovikin and Nicolas Boichat
+ # This file is distributed under the same license as the DDC/CI control tool database package.
+-# Radek <radek@cbk.waw.pl>, 2005.
++# Radek Marcinkowski <radek@cbk.waw.pl>, 2005.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2006.
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: DDC/CI control tool database 20051114\n"
++"Project-Id-Version: ddccontrol-db 20060730\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2006-07-30 19:15+0200\n"
+-"PO-Revision-Date: 2005-11-18 22:21+0100\n"
+-"Last-Translator: Radek Marcinkowski <radek@cbk.waw.pl>\n"
+-"Language-Team: Polish\n"
++"PO-Revision-Date: 2006-08-25 01:10+0200\n"
++"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
++"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Content-Transfer-Encoding: 8bit\n"
+@@ -40,7 +41,7 @@
+ #: ../db/options.xml.h:7
+ #, c-format
+ msgid "Magic Bright Mode"
+-msgstr "Magic Bright Mode"
++msgstr "Tryb Magic Bright"
+ 
+ #: ../db/options.xml.h:8
+ #, c-format
+@@ -55,17 +56,17 @@
+ #: ../db/options.xml.h:10
+ #, c-format
+ msgid "Game"
+-msgstr ""
++msgstr "Gra"
+ 
+ #: ../db/options.xml.h:11
+ #, c-format
+ msgid "Sport"
+-msgstr ""
++msgstr "Sport"
+ 
+ #: ../db/options.xml.h:12
+ #, c-format
+ msgid "Entertain"
+-msgstr ""
++msgstr "Rozrywka"
+ 
+ #: ../db/options.xml.h:13 ../db/options.xml.h:55
+ #, c-format
+@@ -75,7 +76,7 @@
+ #: ../db/options.xml.h:14
+ #, c-format
+ msgid "Super Bright Mode"
+-msgstr "Super Bright Mode"
++msgstr "Tryb Super Bright"
+ 
+ #: ../db/options.xml.h:15
+ #, c-format
+@@ -95,112 +96,112 @@
+ #: ../db/options.xml.h:18
+ #, c-format
+ msgid "Auto Level (Needs a blank line to work)"
+-msgstr ""
++msgstr "Automatyczny poziom (wymaga pustej linii do dzia³ania)"
+ 
+ #: ../db/options.xml.h:19
+ #, c-format
+ msgid "Backlight"
+-msgstr ""
++msgstr "Pod¶wietlenie"
+ 
+ #: ../db/options.xml.h:20
+ #, c-format
+ msgid "ECO Mode"
+-msgstr ""
++msgstr "Tryb ECO"
+ 
+ #: ../db/options.xml.h:21
+ #, c-format
+ msgid "High"
+-msgstr ""
++msgstr "Du¿e"
+ 
+ #: ../db/options.xml.h:22
+ #, c-format
+ msgid "Middle"
+-msgstr ""
++msgstr "¦rednie"
+ 
+ #: ../db/options.xml.h:23
+ #, c-format
+ msgid "Low"
+-msgstr ""
++msgstr "Ma³e"
+ 
+ #: ../db/options.xml.h:24
+-#, fuzzy, c-format
++#, c-format
+ msgid "Auto"
+-msgstr "D¼wiêk"
++msgstr "Automatyczne"
+ 
+ #: ../db/options.xml.h:25 ../db/options.xml.h:26
+ #, c-format
+ msgid "Gamma"
+-msgstr ""
++msgstr "Gamma"
+ 
+ #: ../db/options.xml.h:27
+ #, c-format
+ msgid "-0.5"
+-msgstr ""
++msgstr "-0.5"
+ 
+ #: ../db/options.xml.h:28
+ #, c-format
+ msgid "-0.3"
+-msgstr ""
++msgstr "-0.3"
+ 
+ #: ../db/options.xml.h:29
+ #, c-format
+ msgid "-0.1"
+-msgstr ""
++msgstr "-0.1"
+ 
+ #: ../db/options.xml.h:30
+ #, c-format
+ msgid "0"
+-msgstr ""
++msgstr "0"
+ 
+ #: ../db/options.xml.h:31
+ #, c-format
+ msgid "+0.1"
+-msgstr ""
++msgstr "+0.1"
+ 
+ #: ../db/options.xml.h:32
+ #, c-format
+ msgid "+0.3"
+-msgstr ""
++msgstr "+0.3"
+ 
+ #: ../db/options.xml.h:33
+ #, c-format
+ msgid "+0.5"
+-msgstr ""
++msgstr "+0.5"
+ 
+ #: ../db/options.xml.h:34
+ #, c-format
+ msgid "+0.7"
+-msgstr ""
++msgstr "+0.7"
+ 
+ #: ../db/options.xml.h:35
+ #, c-format
+ msgid "+0.9"
+-msgstr ""
++msgstr "+0.9"
+ 
+ #: ../db/options.xml.h:36
+ #, c-format
+ msgid "1.8"
+-msgstr ""
++msgstr "1.8"
+ 
+ #: ../db/options.xml.h:37
+ #, c-format
+ msgid "2.0"
+-msgstr ""
++msgstr "2.0"
+ 
+ #: ../db/options.xml.h:38
+ #, c-format
+ msgid "2.2"
+-msgstr ""
++msgstr "2.2"
+ 
+ #: ../db/options.xml.h:39
+ #, c-format
+ msgid "2.4"
+-msgstr ""
++msgstr "2.4"
+ 
+ #: ../db/options.xml.h:40
+ #, c-format
+ msgid "2.6"
+-msgstr ""
++msgstr "2.6"
+ 
+ #: ../db/options.xml.h:41
+ #, c-format
+@@ -283,49 +284,49 @@
+ msgstr "Zimny"
+ 
+ #: ../db/options.xml.h:58
+-#, fuzzy, c-format
++#, c-format
+ msgid "Warm1"
+-msgstr "Ciep³y"
++msgstr "Ciep³y1"
+ 
+ #: ../db/options.xml.h:59
+-#, fuzzy, c-format
++#, c-format
+ msgid "Warm2"
+-msgstr "Ciep³y"
++msgstr "Ciep³y2"
+ 
+ #: ../db/options.xml.h:60
+-#, fuzzy, c-format
++#, c-format
+ msgid "Cool1"
+-msgstr "Zimny"
++msgstr "Zimny1"
+ 
+ #: ../db/options.xml.h:61
+-#, fuzzy, c-format
++#, c-format
+ msgid "Cool2"
+-msgstr "Zimny"
++msgstr "Zimny2"
+ 
+ #: ../db/options.xml.h:62
+-#, fuzzy, c-format
++#, c-format
+ msgid "Cool3"
+-msgstr "Zimny"
++msgstr "Zimny3"
+ 
+ #: ../db/options.xml.h:63
+-#, fuzzy, c-format
++#, c-format
+ msgid "Cool4"
+-msgstr "Zimny"
++msgstr "Zimny4"
+ 
+ #: ../db/options.xml.h:64
+-#, fuzzy, c-format
++#, c-format
+ msgid "Cool5"
+-msgstr "Zimny"
++msgstr "Zimny5"
+ 
+ #: ../db/options.xml.h:65
+-#, fuzzy, c-format
++#, c-format
+ msgid "Cool6"
+-msgstr "Zimny"
++msgstr "Zimny6"
+ 
+ #: ../db/options.xml.h:66
+-#, fuzzy, c-format
++#, c-format
+ msgid "Cool7"
+-msgstr "Zimny"
++msgstr "Zimny7"
+ 
+ #: ../db/options.xml.h:67
+ #, c-format
+@@ -400,27 +401,27 @@
+ #: ../db/options.xml.h:81
+ #, c-format
+ msgid "MagicColor"
+-msgstr ""
++msgstr "MagicColor"
+ 
+ #: ../db/options.xml.h:82 ../db/options.xml.h:190 ../db/options.xml.h:202
+ #, c-format
+ msgid "Off"
+-msgstr "Wy³±cz"
++msgstr "Wy³±czony"
+ 
+ #: ../db/options.xml.h:83
+ #, c-format
+ msgid "Demo"
+-msgstr ""
++msgstr "Demo"
+ 
+ #: ../db/options.xml.h:84
+ #, c-format
+ msgid "Full"
+-msgstr ""
++msgstr "Pe³ny"
+ 
+ #: ../db/options.xml.h:85
+-#, fuzzy, c-format
++#, c-format
+ msgid "Intelligent"
+-msgstr "Internet"
++msgstr "Inteligentny"
+ 
+ #: ../db/options.xml.h:86
+ #, c-format
+@@ -498,9 +499,9 @@
+ msgstr "Zegar i faza zegara"
+ 
+ #: ../db/options.xml.h:101
+-#, fuzzy, c-format
++#, c-format
+ msgid "H/V Position (fast mode)"
+-msgstr "Po³o¿enie H/V"
++msgstr "Po³o¿enie H/V (tryb szybki)"
+ 
+ #: ../db/options.xml.h:102
+ #, c-format
+@@ -515,12 +516,12 @@
+ #: ../db/options.xml.h:104
+ #, c-format
+ msgid "Horizontal Pincushion"
+-msgstr "Poduszka Poziomo"
++msgstr "Poduszka Pozioma"
+ 
+ #: ../db/options.xml.h:105
+ #, c-format
+ msgid "Horizontal Pincushion Balance"
+-msgstr ""
++msgstr "Balans poduszki poziomej"
+ 
+ #: ../db/options.xml.h:106
+ #, c-format
+@@ -530,12 +531,12 @@
+ #: ../db/options.xml.h:107
+ #, c-format
+ msgid "Vertical Pincushion Balance"
+-msgstr ""
++msgstr "Balans poduszki pionowej"
+ 
+ #: ../db/options.xml.h:108
+ #, c-format
+ msgid "Center Pincushion"
+-msgstr ""
++msgstr "Poduszka ¶rodkowa"
+ 
+ #: ../db/options.xml.h:109
+ #, c-format
+@@ -550,7 +551,7 @@
+ #: ../db/options.xml.h:111
+ #, c-format
+ msgid "Horizontal Linearity Balance"
+-msgstr ""
++msgstr "Balans liniowo¶ci poziomej"
+ 
+ #: ../db/options.xml.h:112
+ #, c-format
+@@ -560,22 +561,22 @@
+ #: ../db/options.xml.h:113
+ #, c-format
+ msgid "Vertical Linearity Balance"
+-msgstr ""
++msgstr "Balans liniowo¶ci pionowej"
+ 
+ #: ../db/options.xml.h:114
+ #, c-format
+ msgid "Misconvergence"
+-msgstr ""
++msgstr "Rozbie¿no¶æ"
+ 
+ #: ../db/options.xml.h:115
+ #, c-format
+ msgid "Horizontal Misconvergence"
+-msgstr ""
++msgstr "Pozioma rozbie¿no¶æ"
+ 
+ #: ../db/options.xml.h:116
+ #, c-format
+ msgid "Vertical Misconvergence"
+-msgstr ""
++msgstr "Pionowa rozbie¿no¶æ"
+ 
+ #: ../db/options.xml.h:117
+ #, c-format
+@@ -585,7 +586,7 @@
+ #: ../db/options.xml.h:118
+ #, c-format
+ msgid "Parallelogram Distortion (Key Balance)"
+-msgstr ""
++msgstr "Zniekszta³cenie równoleg³obokowe (Key Balance)"
+ 
+ #: ../db/options.xml.h:119
+ #, c-format
+@@ -600,22 +601,22 @@
+ #: ../db/options.xml.h:121
+ #, c-format
+ msgid "Top Corner Distortion Control"
+-msgstr ""
++msgstr "Parametr zniekszta³cenia górnego rogu"
+ 
+ #: ../db/options.xml.h:122
+ #, c-format
+ msgid "Top Corner Distortion Balance"
+-msgstr ""
++msgstr "Balans zniekszta³cenia górnego rogu"
+ 
+ #: ../db/options.xml.h:123
+ #, c-format
+ msgid "Bottom Corner Distortion Control"
+-msgstr ""
++msgstr "Parametr zniekszta³cenia dolnego rogu"
+ 
+ #: ../db/options.xml.h:124
+ #, c-format
+ msgid "Bottom Corner Distortion Balance"
+-msgstr ""
++msgstr "Balans zniekszta³cenia dolnego rogu"
+ 
+ #: ../db/options.xml.h:125
+ #, c-format
+@@ -650,7 +651,7 @@
+ #: ../db/options.xml.h:131
+ #, c-format
+ msgid "Image setup"
+-msgstr ""
++msgstr "Ustawienie obrazu"
+ 
+ #: ../db/options.xml.h:132
+ #, c-format
+@@ -660,17 +661,17 @@
+ #: ../db/options.xml.h:133
+ #, c-format
+ msgid "Image Lock Coarse (Clock)"
+-msgstr ""
++msgstr "Zgrubna blokada obrazu (zegar)"
+ 
+ #: ../db/options.xml.h:134
+ #, c-format
+ msgid "Image Lock Fine (Clock Phase)"
+-msgstr ""
++msgstr "Dok³adna blokada obrazu (faza zegara)"
+ 
+ #: ../db/options.xml.h:135
+ #, c-format
+ msgid "Corners purity"
+-msgstr ""
++msgstr "Czysto¶æ rogów"
+ 
+ #: ../db/options.xml.h:136
+ #, c-format
+@@ -700,7 +701,7 @@
+ #: ../db/options.xml.h:141
+ #, c-format
+ msgid "Landing Adjust (RGB alignment)"
+-msgstr ""
++msgstr "Regulacja l±dowania (wyrównanie RGB)"
+ 
+ #: ../db/options.xml.h:142
+ #, c-format
+@@ -813,9 +814,9 @@
+ msgstr "W³±cz tylko regulacje jasno¶æ/kontrast"
+ 
+ #: ../db/options.xml.h:169
+-#, fuzzy, c-format
++#, c-format
+ msgid "On Screen Display (Samsung)"
+-msgstr "Menu ekranowe"
++msgstr "Menu ekranowe (Samsung)"
+ 
+ #: ../db/options.xml.h:172
+ #, c-format
+@@ -885,7 +886,7 @@
+ #: ../db/options.xml.h:185
+ #, c-format
+ msgid "Japanese"
+-msgstr ""
++msgstr "Japoñski"
+ 
+ #: ../db/options.xml.h:186
+ #, c-format
+@@ -925,17 +926,17 @@
+ #: ../db/options.xml.h:194
+ #, c-format
+ msgid "Autoselect Input Source"
+-msgstr ""
++msgstr "Wybór ¼ród³a wej¶cia"
+ 
+ #: ../db/options.xml.h:195
+-#, fuzzy, c-format
++#, c-format
+ msgid "Automatic"
+-msgstr "Dostosowany automatycznie "
++msgstr "Automatyczny"
+ 
+ #: ../db/options.xml.h:196
+ #, c-format
+ msgid "Manual"
+-msgstr ""
++msgstr "Rêczny"
+ 
+ #: ../db/options.xml.h:197 ../db/options.xml.h:201
+ #, c-format
