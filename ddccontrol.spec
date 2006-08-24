@@ -4,24 +4,23 @@
 %bcond_without	gtk		# don't build GTK+ GUI
 %bcond_without	static_libs	# don't build static library
 #
-%define dbversion 20060308
+%define dbversion 20060730
 %define ddcdb	%{name}-db-%{dbversion}
 
 Summary:	DDCcontrol - control the monitor parameters
 Summary(pl):	DDCcontrol - narzêdzie do regulacji parametrów monitora
 Name:		ddccontrol
-Version:	0.4.1
+Version:	0.4.2
 Release:	1
 License:	GPL v2+
 Group:		Applications
 Source0:	http://dl.sourceforge.net/ddccontrol/%{name}-%{version}.tar.bz2
-# Source0-md5:	bef6825f7dfffbb4fd40eb4a848cd438
+# Source0-md5:	b0eb367f3bc0564bd577e38d0b4107fc
 Source1:	http://dl.sourceforge.net/ddccontrol/%{ddcdb}.tar.bz2
-# Source1-md5:	973a5db6081054bbb336254331820b0c
-Patch0:		%{name}-SAM0197.patch
-Patch1:		%{name}-desktop.patch
-Patch2:		%{name}-gnome.patch
-Patch3:		%{name}-pl.patch
+# Source1-md5:	eaf9189e2f29d14b52cce104aaf3144b
+Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-gnome.patch
+Patch2:		%{name}-pl.patch
 URL:		http://ddccontrol.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -112,7 +111,6 @@ Biblioteka statyczna ddccontrol.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 %{__libtoolize}
@@ -151,6 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ddccontrol
 %attr(755,root,root) %{_bindir}/ddcpci
 %{_datadir}/ddccontrol-db
+%{_mandir}/man1/ddccontrol.1*
 
 %if %{with gtk}
 %files gtk
@@ -158,6 +157,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gddccontrol
 %{_desktopdir}/gddccontrol.desktop
 %{_pixmapsdir}/gddccontrol.png
+%{_mandir}/man1/gddccontrol.1*
 %endif
 
 %if %{with gnome}
