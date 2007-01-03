@@ -4,23 +4,24 @@
 %bcond_without	gtk		# don't build GTK+ GUI
 %bcond_without	static_libs	# don't build static library
 #
-%define dbversion 20060730
+%define dbversion 20061014
 %define ddcdb	%{name}-db-%{dbversion}
 
 Summary:	DDCcontrol - control the monitor parameters
 Summary(pl):	DDCcontrol - narzêdzie do regulacji parametrów monitora
 Name:		ddccontrol
 Version:	0.4.2
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications
 Source0:	http://dl.sourceforge.net/ddccontrol/%{name}-%{version}.tar.bz2
 # Source0-md5:	b0eb367f3bc0564bd577e38d0b4107fc
 Source1:	http://dl.sourceforge.net/ddccontrol/%{ddcdb}.tar.bz2
-# Source1-md5:	eaf9189e2f29d14b52cce104aaf3144b
+# Source1-md5:	91951918e5bc553c251776cdff8cea9c
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-gnome.patch
 Patch2:		%{name}-pl.patch
+Patch3:		%{name}-link.patch
 URL:		http://ddccontrol.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -111,6 +112,7 @@ Biblioteka statyczna ddccontrol.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
