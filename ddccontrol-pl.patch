@@ -957,3 +957,62 @@ diff -urN ddccontrol-0.4.2.orig/po/pl.po ddccontrol-0.4.2/po/pl.po
  msgid "Please update ddccontrol database.\n"
 -msgstr ""
 +msgstr "Proszê uaktualniæ bazê danych ddccontrol.\n"
+--- ddccontrol-0.4.2/ddccontrol-db-20061014/po/pl.po.orig	2006-10-14 08:25:49.000000000 +0200
++++ ddccontrol-0.4.2/ddccontrol-db-20061014/po/pl.po	2007-01-20 13:33:14.419849767 +0100
+@@ -2,14 +2,14 @@
+ # Copyright (C) 2005 Oleg I. Vdovikin and Nicolas Boichat
+ # This file is distributed under the same license as the DDC/CI control tool database package.
+ # Radek Marcinkowski <radek@cbk.waw.pl>, 2005.
+-# Jakub Bogusz <qboosh@pld-linux.org>, 2006.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2006-2007.
+ #
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: ddccontrol-db 20060730\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2006-10-14 14:23+0800\n"
+-"PO-Revision-Date: 2006-10-14 14:25+0730\n"
++"PO-Revision-Date: 2007-01-20 13:30+0100\n"
+ "Last-Translator: Nicolas Boichat <nicolas@boichat.ch>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+@@ -983,29 +983,29 @@
+ #: ../db/options.xml.h:209
+ #, c-format
+ msgid "Buttons and leds"
+-msgstr ""
++msgstr "Przyciski i diody"
+ 
+ #: ../db/options.xml.h:210
+-#, fuzzy, c-format
++#, c-format
+ msgid "Custom key"
+-msgstr "W³asny"
++msgstr "W³asny przycisk"
+ 
+ #: ../db/options.xml.h:211
+-#, fuzzy, c-format
++#, c-format
+ msgid "MagicBright"
+-msgstr "Tryb Magic Bright"
++msgstr "MagicBright"
+ 
+ #: ../db/options.xml.h:213
+-#, fuzzy, c-format
++#, c-format
+ msgid "Automatic setup"
+-msgstr "Automatyczny"
++msgstr "Ustawienia automatyczne"
+ 
+ #: ../db/options.xml.h:215
+-#, fuzzy, c-format
++#, c-format
+ msgid "Color Tone"
+-msgstr "Ustawienie kolorów"
++msgstr "Tonacja kolorów"
+ 
+ #: ../db/options.xml.h:216
+ #, c-format
+ msgid "Power LED"
+-msgstr ""
++msgstr "Dioda zasilania"
