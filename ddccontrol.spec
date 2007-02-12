@@ -8,7 +8,7 @@
 %define ddcdb	%{name}-db-%{dbversion}
 
 Summary:	DDCcontrol - control the monitor parameters
-Summary(pl):	DDCcontrol - narzêdzie do regulacji parametrów monitora
+Summary(pl.UTF-8):   DDCcontrol - narzÄ™dzie do regulacji parametrÃ³w monitora
 Name:		ddccontrol
 Version:	0.4.2
 Release:	3
@@ -41,49 +41,49 @@ DDCcontrol is a program used to control monitor parameters, like
 brightness and contrast, by software, i.e. without using the OSD and
 the buttons in front of the monitor.
 
-%description -l pl
-DDCcontrol jest programem s³u¿±cym do regulacji parametrów monitora
-takich jak jaskrawo¶æ i kontrast, bez u¿ywania OSD i przycisków na
+%description -l pl.UTF-8
+DDCcontrol jest programem sÅ‚uÅ¼Ä…cym do regulacji parametrÃ³w monitora
+takich jak jaskrawoÅ›Ä‡ i kontrast, bez uÅ¼ywania OSD i przyciskÃ³w na
 obudowie monitora.
 
 %package gtk
 Summary:	GTK+ GUI for ddccontrol
-Summary(pl):	Graficzny interfejs GTK+ dla ddccontrol
+Summary(pl.UTF-8):   Graficzny interfejs GTK+ dla ddccontrol
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
 %description gtk
 GTK+ GUI for ddccontrol.
 
-%description gtk -l pl
+%description gtk -l pl.UTF-8
 Graficzny interfejs GTK+ dla ddccontrol.
 
 %package applet
 Summary:	GNOME applet for ddccontrol
-Summary(pl):	Aplet GNOME dla ddccontrol
+Summary(pl.UTF-8):   Aplet GNOME dla ddccontrol
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
 %description applet
 GNOME applet for ddccontrol.
 
-%description applet -l pl
+%description applet -l pl.UTF-8
 Aplet GNOME dla ddccontrol.
 
 %package libs
 Summary:	ddccontrol library
-Summary(pl):	Biblioteka ddccontrol
+Summary(pl.UTF-8):   Biblioteka ddccontrol
 Group:		Libraries
 
 %description libs
 DDCcontrol library.
 
-%description libs -l pl
+%description libs -l pl.UTF-8
 Biblioteka DDCcontrol.
 
 %package devel
 Summary:	Development files for ddccontrol library
-Summary(pl):	Pliki niezbêdne programistom u¿ywaj±cym biblioteki ddccontrol
+Summary(pl.UTF-8):   Pliki niezbÄ™dne programistom uÅ¼ywajÄ…cym biblioteki ddccontrol
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	libxml2-devel
@@ -92,19 +92,19 @@ Requires:	pciutils-devel
 %description devel
 Development files for ddccontrol library.
 
-%description devel -l pl
-Pliki niezbêdne programistom u¿ywaj±cym biblioteki ddccontrol.
+%description devel -l pl.UTF-8
+Pliki niezbÄ™dne programistom uÅ¼ywajÄ…cym biblioteki ddccontrol.
 
 %package static
 Summary:	Static ddccontrol library
-Summary(pl):	Biblioteka statyczna ddccontrol
+Summary(pl.UTF-8):   Biblioteka statyczna ddccontrol
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static ddccontrol library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna ddccontrol.
 
 %prep
