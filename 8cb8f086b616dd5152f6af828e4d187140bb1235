@@ -1,0 +1,3 @@
+- adapterized
+- added applet subpackage (nad enable GNOME applet)
+- use %%find_lang macro
