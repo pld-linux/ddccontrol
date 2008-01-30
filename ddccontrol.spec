@@ -115,6 +115,7 @@ Biblioteka statyczna ddccontrol.
 %patch3 -p1
 
 %build
+%{__intltoolize}
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
