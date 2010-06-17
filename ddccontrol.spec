@@ -11,7 +11,7 @@ Summary:	DDCcontrol - control the monitor parameters
 Summary(pl.UTF-8):	DDCcontrol - narzędzie do regulacji parametrów monitora
 Name:		ddccontrol
 Version:	0.4.2
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Applications
 Source0:	http://dl.sourceforge.net/ddccontrol/%{name}-%{version}.tar.bz2
