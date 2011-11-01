@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	gnome		# don't build gnome applet
+%bcond_with	gnome		# don't build gnome applet
 %bcond_without	gtk		# don't build GTK+ GUI
 %bcond_without	static_libs	# don't build static library
 #
@@ -11,7 +11,7 @@ Summary:	DDCcontrol - control the monitor parameters
 Summary(pl.UTF-8):	DDCcontrol - narzędzie do regulacji parametrów monitora
 Name:		ddccontrol
 Version:	0.4.2
-Release:	4
+Release:	5
 License:	GPL v2+
 Group:		Applications
 Source0:	http://dl.sourceforge.net/ddccontrol/%{name}-%{version}.tar.bz2
@@ -136,7 +136,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__make} -C %{ddcdb} install \
-        DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libddccontrol.la
 
 %find_lang %{name} --all-name
 
@@ -175,11 +177,11 @@ rm -rf $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libddccontrol.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libddccontrol.so.0
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libddccontrol.so
-%{_libdir}/libddccontrol.la
 %{_includedir}/ddccontrol
 
 %if %{with static_libs}
