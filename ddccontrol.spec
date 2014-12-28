@@ -25,7 +25,7 @@ Patch3:		%{name}-link.patch
 URL:		http://ddccontrol.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 %{?with_gnome:BuildRequires:	gnome-panel-devel >= 2.10}
 %{?with_gtk:BuildRequires:	gtk+2-devel >= 2:2.4}
 BuildRequires:	intltool
