@@ -10,7 +10,7 @@ Summary:	DDCcontrol - control the monitor parameters
 Summary(pl.UTF-8):	DDCcontrol - narzędzie do regulacji parametrów monitora
 Name:		ddccontrol
 Version:	1.0.3
-Release:	0.1
+Release:	1
 License:	GPL v2+
 Group:		Applications
 Source0:	https://github.com/ddccontrol/ddccontrol/archive/refs/tags/%{version}.tar.gz
@@ -18,9 +18,9 @@ Source0:	https://github.com/ddccontrol/ddccontrol/archive/refs/tags/%{version}.t
 Source1:	https://github.com/ddccontrol/ddccontrol-db/archive/refs/tags/%{dbversion}.tar.gz
 # Source1-md5:	8ce537400ab9b1a0fafa90ae89acf3bb
 Patch0:		%{name}-desktop.patch
-Patch1:		%{name}-gnome.patch
+Patch1:		%{name}-systemd_modules.patch
+#leaving the pl.patch for now, for potential rediff
 Patch2:		%{name}-pl.patch
-Patch3:		%{name}-link.patch
 URL:		http://ddccontrol.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -32,7 +32,9 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pciutils-devel
 BuildRequires:	pkgconfig
+Requires(post,preun,postun):	systemd-units
 Requires:	%{name}-libs = %{version}-%{release}
+Obsoletes:	ddccontrol-applet <= 0.4.2-6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -94,12 +96,25 @@ Static ddccontrol library.
 %description static -l pl.UTF-8
 Biblioteka statyczna ddccontrol.
 
+%preun
+%systemd_preun ddccontrol.service
+
+%post
+%systemd_post ddccontrol.service
+
+%postun
+%systemd_reload
+
+%post gtk
+%update_icon_cache hicolor
+
+%postun gtk
+%update_icon_cache hicolor
+
 %prep
 %setup -q -a 1
 %patch -P0 -p1
-#patch -P1 -p1
-#patch -P2 -p1
-#patch -P3 -p1
+%patch -P1 -p1
 
 %build
 ./autogen.sh
@@ -145,7 +160,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libexecdir}/ddccontrol
 %attr(755,root,root) %{_libexecdir}/ddccontrol/ddccontrol_service
 %attr(755,root,root) %{_libexecdir}/ddccontrol/ddcpci
-%{_libdir}/modules-load.d/ddccontrol-i2c-dev.conf
+%{_prefix}/lib/modules-load.d/ddccontrol-i2c-dev.conf
 %{_datadir}/dbus-1/interfaces/ddccontrol.DDCControl.xml
 %{_datadir}/dbus-1/system-services/ddccontrol.DDCControl.service
 %{_datadir}/ddccontrol-db

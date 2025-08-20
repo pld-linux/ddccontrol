@@ -1,0 +1,11 @@
+--- ddccontrol-1.0.3/src/lib/Makefile.am~	2024-01-31 09:38:39.000000000 +0000
++++ ddccontrol-1.0.3/src/lib/Makefile.am	2025-08-20 11:25:57.086445143 +0000
+@@ -9,7 +9,7 @@
+ 
+ $(pkgconfig_DATA): $(srcdir)/ddccontrol.pc.in $(top_builddir)/config.status
+ 
+-modulesdir = $(libdir)/modules-load.d/
++modulesdir = /usr/lib/modules-load.d/
+ modules_DATA = ddccontrol-i2c-dev.conf
+ 
+ lib_LTLIBRARIES = libddccontrol.la
