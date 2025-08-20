@@ -1,18 +1,14 @@
-diff -urN ddccontrol-0.4.1/src/gddccontrol/gddccontrol.desktop.in ddccontrol-0.4.1-new/src/gddccontrol/gddccontrol.desktop.in
---- ddccontrol-0.4.1/src/gddccontrol/gddccontrol.desktop.in	2005-10-30 10:11:37.000000000 +0100
-+++ ddccontrol-0.4.1-new/src/gddccontrol/gddccontrol.desktop.in	2006-05-07 22:11:16.387394500 +0200
-@@ -1,9 +1,12 @@
- [Desktop Entry]
- Encoding=UTF-8
- Name=Monitor Settings
--Comment=Set your monitor preferences (contrast, brightness,...) and manage your profiles
-+Name[pl]=Ustawienia monitora
-+Comment=Set your monitor preferences (contrast, brightness, ...) and manage your profiles
+--- ddccontrol-1.0.3/src/gddccontrol/gddccontrol.desktop.in~	2024-01-31 09:38:39.000000000 +0000
++++ ddccontrol-1.0.3/src/gddccontrol/gddccontrol.desktop.in	2025-08-19 23:00:39.417976924 +0000
+@@ -2,8 +2,10 @@
+ _Name=DDC Control
+ _GenericName=Monitor Settings
+ _Comment=Set your monitor preferences (contrast, brightness,...) and manage your profiles
++GenericName[pl]=Ustawienia monitora
 +Comment[pl]=Ustaw parametry pracy monitora (kontrast, jaskrawość, ...) i zarządzaj profilami ustawień
  Exec=gddccontrol
 -Icon=gddccontrol
 +Icon=gddccontrol.png
  Terminal=false
  Type=Application
- Categories=GNOME;Application;Settings;
-+# vi: encoding=utf-8
+ Categories=GTK;Settings;HardwareSettings;
